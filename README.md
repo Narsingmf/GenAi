@@ -19,6 +19,10 @@ The infrastructure consists of:
 ├── variables.tf      # Input variables for the root module
 ├── outputs.tf        # Outputs from the root module
 ├── terraform.tfvars  # Example variable values
+├── .github/
+│   └── workflows/    # CI/CD workflow definitions
+├── docs/             # Documentation
+├── scripts/          # Utility scripts
 └── modules/
     ├── vpc/          # VPC module
     │   ├── main.tf
@@ -58,6 +62,33 @@ You can customize the deployment by modifying the variables in `terraform.tfvars
 
 ```
 terraform apply -var="instance_type=t3.micro" -var="region=us-west-2"
+```
+
+## CI/CD Pipeline with Security Scanning
+
+This project includes a GitHub Actions workflow that provides:
+
+- Automated validation of Terraform configurations
+- Security scanning using multiple tools:
+  - tfsec: Terraform security scanner
+  - checkov: Policy-as-code scanner
+  - terrascan: Compliance and security scanner
+- Automated planning and applying of Terraform configurations
+
+For more details, see:
+- [CI/CD Security Scanning documentation](docs/cicd-security-scanning.md)
+- [Security Tools documentation](docs/security-tools.md)
+
+## Local Security Scanning
+
+Run security scans locally before committing:
+
+```bash
+# Make the script executable
+chmod +x scripts/run-security-scans.sh
+
+# Run security scans
+./scripts/run-security-scans.sh
 ```
 
 ## Notes

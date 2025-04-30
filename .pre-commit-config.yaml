@@ -1,0 +1,22 @@
+repos:
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.77.1
+  hooks:
+    - id: terraform_fmt
+    - id: terraform_validate
+    - id: terraform_docs
+    - id: terraform_tfsec
+    - id: checkov
+    - id: terrascan
+      args:
+        - --args=--verbose
+        - --args=--non-recursive
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.4.0
+  hooks:
+    - id: check-merge-conflict
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+    - id: check-yaml
+    - id: check-json
