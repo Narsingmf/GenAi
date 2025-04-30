@@ -78,6 +78,16 @@ The workflow requires the following GitHub secrets:
 - `TF_API_TOKEN`: Terraform Cloud API token (if using Terraform Cloud)
 - `GITHUB_TOKEN`: Automatically provided by GitHub Actions
 
+## GitHub Actions Download Information
+
+For environments with restricted network access or self-hosted runners, this repository includes download information for the following GitHub Actions:
+
+- `bridgecrewio/checkov-action@master` (SHA: 5e2c7c356895bd7964a2519d0675a9af9b3c0c38)
+- `actions/upload-artifact@v3` (SHA: 3cea5372237819ed00197afe530f5a7ea3e805c8)
+
+These are stored in the `.github/actions` directory structure following the pattern:
+`.github/actions/{owner}/{repo}/{ref}/@{sha}`
+
 ## Adding Custom Security Policies
 
 You can add custom security policies:

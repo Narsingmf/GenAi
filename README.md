@@ -20,7 +20,8 @@ The infrastructure consists of:
 ├── outputs.tf        # Outputs from the root module
 ├── terraform.tfvars  # Example variable values
 ├── .github/
-│   └── workflows/    # CI/CD workflow definitions
+│   ├── workflows/    # CI/CD workflow definitions
+│   └── actions/      # GitHub Actions download information
 ├── docs/             # Documentation
 ├── scripts/          # Utility scripts
 └── modules/
@@ -74,6 +75,8 @@ This project includes a GitHub Actions workflow that provides:
   - checkov: Policy-as-code scanner
   - terrascan: Compliance and security scanner
 - Automated planning and applying of Terraform configurations
+
+The repository includes download information for GitHub Actions to support environments with restricted network access or self-hosted runners.
 
 For more details, see:
 - [CI/CD Security Scanning documentation](docs/cicd-security-scanning.md)
